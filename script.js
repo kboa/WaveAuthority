@@ -12,6 +12,8 @@ function predictImage(input) {
   let retry = document.querySelector('.retry');
   let introresults = document.querySelector('#introresults');
   let box = document.querySelector('#box');
+  let link1 = document.querySelector('#link1');
+  let link2 = document.querySelector('#link2');
   let file = input.files[0];
   
   // File reader, reads our file....
@@ -110,12 +112,16 @@ function predictImage(input) {
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "15px";
             introresults.innerHTML = "<b>Results</b>: FAIL <br/>Quit now - this aint for you chief <br/>";
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
           }
           else {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "15px";
-            introresults.innerHTML = "<b>Results</b>: FAIL <br/>It's possible. Buy yourself a brush and a haircut. <br/>";
+            introresults.innerHTML = "<b>Results</b>: FAIL <br/>It's possible but looks like you need a brush, durag, and haircut. <br/>";
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
           }
         }
         
