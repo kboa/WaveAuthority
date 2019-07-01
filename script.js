@@ -11,6 +11,7 @@ function predictImage(input) {
   let banner = document.querySelector('.textbanner');
   let retry = document.querySelector('.retry');
   let introresults = document.querySelector('#introresults');
+  let introresults_c = document.querySelector('#introresults_c');
   let box = document.querySelector('#box');
   let link1 = document.querySelector('#link1');
   let link2 = document.querySelector('#link2');
