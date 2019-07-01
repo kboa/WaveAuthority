@@ -97,7 +97,7 @@ function predictImage(input) {
           introresults.style.fontWeight = "normal";
           introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Percentile</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1);
           introresults.style.textAlign = "left";
-          introresults.style.fontSize = "15px";
+          introresults.style.fontSize = "20px";
           
           
           //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";
@@ -110,7 +110,7 @@ function predictImage(input) {
           if (tagName == "Never Gonna Happen") {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
-            introresults.style.fontSize = "15px";
+            introresults.style.fontSize = "20px";
             introresults.innerHTML = "<b>Results</b>: FAIL <br/>Quit now - this aint for you chief <br/>";
             link1.style.visibility ="visible";
             link2.style.visibility ="visible";
@@ -118,7 +118,7 @@ function predictImage(input) {
           else {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
-            introresults.style.fontSize = "15px";
+            introresults.style.fontSize = "20px";
             introresults.innerHTML = "<b>Results</b>: FAIL <br/>It's possible but looks like you need a brush, durag, and haircut. <br/>";
             link1.style.visibility ="visible";
             link2.style.visibility ="visible";
