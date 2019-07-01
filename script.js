@@ -34,6 +34,9 @@ function predictImage(input) {
   introresults.innerText = 'Analyzing...';
   answer.innerText = "";
   
+  logo.style.left = "19%";
+  logo.style.transform = "";
+  
   // 1 - Ask for the file in a format that we can display on the screen
   reader.onloadend = function () {
 
@@ -92,9 +95,7 @@ function predictImage(input) {
         answer.innerText = '' //+ tagName + previousProbability;
         //answer.innerText = console.log(prediction.predictions);
         retry.style.visibility = "visible";
-        logo.style.left = "19%";
-        logo.style.transform = "";
-        
+      
         
         
         if (tagName == "Waves"){
