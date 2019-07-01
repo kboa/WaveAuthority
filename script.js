@@ -14,6 +14,8 @@ function predictImage(input) {
   let box = document.querySelector('#box');
   let link1 = document.querySelector('#link1');
   let link2 = document.querySelector('#link2');
+  let logo = document.querySelector('.logo');
+ 
   let file = input.files[0];
   
   // File reader, reads our file....
@@ -90,6 +92,10 @@ function predictImage(input) {
         answer.innerText = '' //+ tagName + previousProbability;
         //answer.innerText = console.log(prediction.predictions);
         retry.style.visibility = "visible";
+        logo.style.left = "2%";
+        logo.style.transform = "";
+        
+        
         
         if (tagName == "Waves"){
           preview.style.backgroundColor = "#7FFF00";
