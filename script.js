@@ -93,23 +93,59 @@ function predictImage(input) {
       }
       
       if (tagName) {
-        answer.innerText = '' //+ tagName + previousProbability;
+        answer.innerText = ''; //+ tagName + previousProbability;
         //answer.innerText = console.log(prediction.predictions);
         retry.style.visibility = "visible";
       
         
         
         if (tagName == "Waves"){
-          preview.style.backgroundColor = "#7FFF00";
-          cert.style.visibility = "visible";
-          introresults.style.fontWeight = "normal";
-          introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Percentile</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1);
-          introresults.style.textAlign = "left";
-          introresults.style.fontSize = "12px";
           
+          if(previousProbability==1){
+            preview.style.backgroundColor = "#7FFF00";
+            cert.style.visibility = "visible";
+            introresults.style.fontWeight = "normal";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Highest Distinction</b>: Top 1% Waver";
+            introresults.style.textAlign = "left";
+            introresults.style.fontSize = "12px"; 
+            //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
+          }
           
-          //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";
-        }
+          if(previousProbability<1 && previousProbability>.95){
+            preview.style.backgroundColor = "#7FFF00";
+            cert.style.visibility = "visible";
+            introresults.style.fontWeight = "normal";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: Top 10% Waver";
+            introresults.style.textAlign = "left";
+            introresults.style.fontSize = "12px"; 
+            //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
+          }
+          
+          if(previousProbability<.95 && previousProbability>.70){
+            preview.style.backgroundColor = "#7FFF00";
+            cert.style.visibility = "visible";
+            introresults.style.fontWeight = "normal";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br>You might need these...<br><br>";
+            introresults.style.textAlign = "left";
+            introresults.style.fontSize = "12px"; 
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
+            //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
+          }
+          
+          if(previousProbability<.70){
+            preview.style.backgroundColor = "red";
+            cert.style.visibility = "hidden";
+            introresults.style.fontWeight = "normal";
+            introresults.innerHTML = "<b>Results</b>: FAIL </br></br>We see those ripples but...we can't certify those</br></br>Keep brushing </br>";
+            introresults.style.textAlign = "left";
+            introresults.style.fontSize = "12px"; 
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
+            //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
+          }
+          
+          }
         
         else{
           preview.style.backgroundColor = "red";
@@ -119,15 +155,15 @@ function predictImage(input) {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px";
-            introresults.innerHTML = "<b>Results</b>: FAIL <br/>Quit now - this aint for you chief <br/>";
-            link1.style.visibility ="visible";
+            introresults.innerHTML = "<b>Results</b>: FAIL </br></br>Quit now - this aint for you chief</br>Hide that with a durag";
+            //link1.style.visibility ="visible";
             link2.style.visibility ="visible";
           }
           else {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px";
-            introresults.innerHTML = "<b>Results</b>: FAIL <br/>It's possible but looks like you need a brush, durag, and haircut. <br/>";
+            introresults.innerHTML = "<b>Results</b>: FAIL <br/>There's potential... but you need prayers, a cut, and some product!<br/><br/>";
             link1.style.visibility ="visible";
             link2.style.visibility ="visible";
           }
