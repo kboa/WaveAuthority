@@ -16,6 +16,8 @@ function predictImage(input) {
   let link1 = document.querySelector('#link1');
   let link2 = document.querySelector('#link2');
   let logo = document.querySelector('.logo');
+  let addpic = document.querySelector('.image-upload');
+  
  
   let file = input.files[0];
   
@@ -48,6 +50,8 @@ function predictImage(input) {
     box.style.height = "65%";
     cert.style.top = "0%";
     cert.style.left = "10px";
+    retry.style.visibility = "visible";
+    addpic.style.visibility = "hidden";
     
   }
 
@@ -95,7 +99,7 @@ function predictImage(input) {
       if (tagName) {
         answer.innerText = ''; //+ tagName + previousProbability;
         //answer.innerText = console.log(prediction.predictions);
-        retry.style.visibility = "visible";
+        
       
         
         
@@ -163,7 +167,7 @@ function predictImage(input) {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px";
-            introresults.innerHTML = "<b>Results</b>: FAIL <br/>There's potential... but you need prayers, a cut, and some product!<br/><br/>";
+            introresults.innerHTML = "<b>Results</b>: FAIL <br/><br/>There's potential... but you need prayers, a cut, and some product!<br/><br/>";
             link1.style.visibility ="visible";
             link2.style.visibility ="visible";
           }
