@@ -136,6 +136,31 @@
     visibility:hidden;
     font-size: 12px;
   }
+  
+  
+  .image-upload
+  {
+    width:50px;
+    height:50px;
+    bottom:15px;
+    right:15px;
+    z-index: 1; 
+    visibility:visible;
+    
+  }
+  
+  .image-upload > input
+  {
+    display: none;
+  }
+  .image-upload img
+  {
+    width: 100%;
+    cursor: pointer;
+    object-fit: contain;
+    
+  }
+  
 	
   div {
     width: 100%;
@@ -179,6 +204,9 @@
       top: 30%;
       visibility: hidden;
     }
+  
+  
+  
 
   
 
@@ -201,21 +229,21 @@
     <img class="logoimage" style="width:100%; height:100%;" src="https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2FWaveAuthorityLogo.png">
   </div>
   
+  <div class="image-upload">
+      <label for="file">
+          <img src="https://cdn.glitch.com/eb35d133-554b-4524-8ab4-c3fb61be49e6%2Fadd%2Ba%2Bphoto%2B24px-131985225714761294_512.png?"/>
+      </label>
+
+      <input id="file" type="file" class="btn"/>
+  </div>
+  
   <div id ="box" class="card" >
-    
         <img id="preview" class="card-img-top" src="https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fnico-marks-Uxats-4Bcmw-unsplash.jpg">
-    
         <div id="answer" data-type="Text" data-name="Game time. Pull off the du-rag and take a picture" class="Game_time_Pull_off_the_du_rag__Class">
-    
-      <span class="textbanner"> Are you really wavey tho?? <br/> Submit a pic to find out<br/><br/> </span>
-      <!-- <span style="background-image: url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg'); display:block"> Pull off the du-rag and take a picture <br/><br/> </span> -->
-      
-      
+        <!-- <span style="background-image: url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg'); display:block"> Pull off the du-rag and take a picture <br/><br/> </span> -->
 
-      
-
-          
-      <input id="file" type="file" class="btn">
+   <span class="textbanner"> Are you really wavey tho?? <br/> Submit a pic to find out<br/><br/> </span>
+        
     </div>
     
     <div class="ID3062726">
