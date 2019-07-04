@@ -120,7 +120,7 @@ function predictImage(input) {
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
           
-          if(previousProbability<.99 && previousProbability>.90){
+          if(previousProbability<.9995 && previousProbability>.90){
             if(previousProbability<1 && previousProbability>.99){
               previousProbability = previousProbability - .011;
             }
