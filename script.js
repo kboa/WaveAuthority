@@ -5,7 +5,7 @@ function predictImage(input) {
   
   // Data from our form
   let preview = document.querySelector('#preview');
-  let card = document.querySelector('#card-img-top');
+  let card = document.querySelector('.card-img-top');
   let cert = document.querySelector('.ID3062726');
   let answer = document.querySelector('#answer');
   let banner = document.querySelector('.textbanner');
@@ -25,12 +25,12 @@ function predictImage(input) {
   let reader = new FileReader();
   
   // Where the Custom Vision API lives
-  //let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/' + document.querySelector('#predictionProject').value + '/image';
+  //let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/' + document.querySelector('#predictionProject').val=ue + '/image';
   //Using Model Iteration #1
   //let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/e3c626c6-cd5e-41a2-bf98-294f15f03105/classify/iterations/Iteration1/image'
   
-  //Using Model Iteration #3
-  let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/e3c626c6-cd5e-41a2-bf98-294f15f03105/classify/iterations/Iteration3/image';
+  //Using Model - WAVES2 -  Iteration #11
+  let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/84893213-7386-42da-82fc-3bd42b3a361a/classify/iterations/Iteration12/image';
   
   
   // 0 - Reset the answer text
@@ -46,9 +46,10 @@ function predictImage(input) {
     // update screen with image
     preview.src = reader.result;
     preview.style.objectFit = "contain";
+    
     //preview.style.top = "-20px";
     box.style.height = "65%";
-    cert.style.top = "0%";
+    cert.style.top = "10%";
     cert.style.left = "10px";
     retry.style.visibility = "visible";
     addpic.style.visibility = "hidden";
@@ -62,8 +63,8 @@ function predictImage(input) {
     url, 
     {
       headers: {
-        //'Prediction-key': document.querySelector('#predictionKey').value 
-        'Prediction-key': 'c733edde9ccc485fa862123b21954a87' 
+        //'Prediction-key': 'c733edde9ccc485fa862123b21954a87' 
+        'Prediction-key': 'c733edde9ccc485fa862123b21954a87'
         
       },
       method: 'POST',
@@ -96,6 +97,10 @@ function predictImage(input) {
         tagName = row.tagName;
       }
       
+      if (row.tagName =="Waves") {
+        var wpreviousProbability = row.probability;
+      }
+      
       if (tagName) {
         answer.innerText = ''; //+ tagName + previousProbability;
         //answer.innerText = console.log(prediction.predictions);
@@ -105,31 +110,37 @@ function predictImage(input) {
         
         if (tagName == "Waves"){
           
-          if(previousProbability==1){
+          if((previousProbability*100).toFixed(2)>=99.8){
             preview.style.backgroundColor = "#7FFF00";
             cert.style.visibility = "visible";
             introresults.style.fontWeight = "normal";
-            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Highest Distinction</b>: Top 1% Waver";
+            introresults.innerHTML = "<b>Results</b>: Certified Elite Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Highest Distinction</b>: Top 1% Waver";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
           
-          if(previousProbability<1 && previousProbability>.95){
+          if(previousProbability<.99 && previousProbability>.90){
+            if(previousProbability<1 && previousProbability>.99){
+              previousProbability = previousProbability - .011;
+            }
+            
             preview.style.backgroundColor = "#7FFF00";
+            //preview.style.padding = "30px";
             cert.style.visibility = "visible";
             introresults.style.fontWeight = "normal";
-            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: Top 10% Waver";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + ((previousProbability*100)-(5*(1-previousProbability.toFixed(0)))).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: Top 10% Waver";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
           
-          if(previousProbability<.95 && previousProbability>.70){
+          if(previousProbability<.90 && previousProbability>.50){
+            
             preview.style.backgroundColor = "#7FFF00";
             cert.style.visibility = "visible";
             introresults.style.fontWeight = "normal";
-            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + (previousProbability*100).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br>You might need these...<br><br>";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + ((previousProbability*100)-(5*(1-previousProbability.toFixed(0)))).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br>You might need these...<br><br>";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
             link1.style.visibility ="visible";
@@ -137,11 +148,19 @@ function predictImage(input) {
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
           
-          if(previousProbability<.70){
+          if(previousProbability<=.50){
+            if(wpreviousProbability>.25){
+              var weakwave = "<b>Visibility</b>: " + (wpreviousProbability*100).toFixed(2) + "%</br>";
+              introresults.innerHTML = "<b>Results</b>: FAIL </br>" + weakwave +"</br>We see those ripples but...we can't certify those</br></br>Keep brushing </br>";
+            }
+            else{
+              introresults.innerHTML = "<b>Results</b>: FAIL </br>" + "</br>We see those ripples but...we can't certify those</br></br>Keep brushing </br>";
+            
+            }
+            
             preview.style.backgroundColor = "red";
             cert.style.visibility = "hidden";
             introresults.style.fontWeight = "normal";
-            introresults.innerHTML = "<b>Results</b>: FAIL </br></br>We see those ripples but...we can't certify those</br></br>Keep brushing </br>";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
             link1.style.visibility ="visible";
@@ -167,9 +186,18 @@ function predictImage(input) {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px";
-            introresults.innerHTML = "<b>Results</b>: FAIL <br/><br/>There's potential... but you need prayers, a cut, and some product!<br/><br/>";
             link1.style.visibility ="visible";
             link2.style.visibility ="visible";
+            
+            if(wpreviousProbability>.10){
+              var weakwave = "<b>Visibility</b>: " + (wpreviousProbability*100).toFixed(2) + "%</br>";
+              introresults.innerHTML = "<b>Results</b>: FAIL <br/>" + weakwave + "<br/>There's potential... but you might need a cut, and some brush work!<br/><br/>";
+            }
+            else{
+              introresults.innerHTML = "<b>Results</b>: FAIL <br/>" + "<br/>There's potential... but you might need a cut, and some brush work!<br/><br/>";
+            }
+            
+            
           }
         }
         
@@ -184,6 +212,7 @@ function predictImage(input) {
   })
   .catch(function(error) {
     console.error('Error:', error)
+    answer.innerText = 'Error try another picture';
   });
 
 }
