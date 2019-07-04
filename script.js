@@ -110,7 +110,7 @@ function predictImage(input) {
         
         if (tagName == "Waves"){
           
-          if((previousProbability*100).toFixed(2)>=99.8){
+          if((previousProbability*100).toFixed(2)>=99.95){
             preview.style.backgroundColor = "#7FFF00";
             cert.style.visibility = "visible";
             introresults.style.fontWeight = "normal";
