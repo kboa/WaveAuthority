@@ -140,7 +140,7 @@ function predictImage(input) {
             preview.style.backgroundColor = "#7FFF00";
             cert.style.visibility = "visible";
             introresults.style.fontWeight = "normal";
-            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + ((previousProbability*100)-(5*(1-previousProbability.toFixed(0)))).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br>You might need these...<br><br>";
+            introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + ((previousProbability*100)-(5*(1-previousProbability.toFixed(0)))).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br><br><br>";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
             link1.style.visibility ="hidden";
