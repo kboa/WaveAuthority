@@ -30,7 +30,7 @@ function predictImage(input) {
   //let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/e3c626c6-cd5e-41a2-bf98-294f15f03105/classify/iterations/Iteration1/image'
   
   //Using Model - WAVES2 -  Iteration #11
-  let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/84893213-7386-42da-82fc-3bd42b3a361a/classify/iterations/Iteration12/image';
+  let url = 'https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/84893213-7386-42da-82fc-3bd42b3a361a/classify/iterations/Iteration13/image';
   
   
   // 0 - Reset the answer text
