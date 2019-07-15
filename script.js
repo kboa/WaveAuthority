@@ -143,7 +143,7 @@ function predictImage(input) {
             introresults.innerHTML = "<b>Results</b>: Certified Waver <br/><b>Visibility</b>: " + ((previousProbability*100)-(5*(1-previousProbability.toFixed(0)))).toFixed(2) + "%<br/><b>Certification #</b>: " + Math.floor((Math.random() * 1000000) + 1) + "<br/><br/><b>Distinction</b>: None - barely passed.</br><br><br>";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
-            link1.style.visibility ="hidden";
+            link1.style.visibility ="visible";
             link2.style.visibility ="hidden";
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
@@ -163,8 +163,8 @@ function predictImage(input) {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px"; 
-            link1.style.visibility ="hidden";
-            link2.style.visibility ="hidden";
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
             //answer.innerText.style.backgroundImage = "url('https://cdn.glitch.com/bc6850ee-54b8-4a84-86fe-078e8e2deabf%2Fgldban.jpg')";  
           }
           
@@ -180,14 +180,14 @@ function predictImage(input) {
             introresults.style.fontSize = "12px";
             introresults.innerHTML = "<b>Results</b>: FAIL </br></br>Quit now - this aint for you chief</br>Hide that with a durag";
             //link1.style.visibility ="visible";
-            link2.style.visibility ="hidden";
+            link2.style.visibility ="visible";
           }
           else {
             introresults.style.fontWeight = "normal";
             introresults.style.textAlign = "left";
             introresults.style.fontSize = "12px";
-            link1.style.visibility ="hidden";
-            link2.style.visibility ="hidden";
+            link1.style.visibility ="visible";
+            link2.style.visibility ="visible";
             
             if(wpreviousProbability>.10){
               var weakwave = "<b>Visibility</b>: " + (wpreviousProbability*100).toFixed(2) + "%</br>";
